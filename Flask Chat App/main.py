@@ -48,6 +48,10 @@ def home():
 
 @app.route("/room")
 def room():
+    room = session.get("room")
+    if room is None or session.get("name") is None or room not in rooms:
+        return redirect(url_for("home"))
+
     return render_template("room.html", name=session.get("name"), room=session)
 
    
