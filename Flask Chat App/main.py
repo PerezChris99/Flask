@@ -95,6 +95,5 @@ def disconnect():
     send({"name": name, "message": "has left the room"}, to=room)
     print(f"{name} has left room {room}")
 
-
 if __name__ == '__main__':
     socketio.run(app, debug=True)
