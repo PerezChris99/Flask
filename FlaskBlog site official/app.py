@@ -1,30 +1,32 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, url_for
+app = Flask(__name__)
 
 posts = [
     {
-        'author': 'John Doe',
+        'author': 'Corey Schafer',
         'title': 'Blog Post 1',
-        'content': 'Lorem ipsum',
-        'date': 'Jan 1 3033',
+        'content': 'First post content',
+        'date_posted': 'April 20, 2018'
     },
     {
         'author': 'Jane Doe',
         'title': 'Blog Post 2',
-        'content': 'Lorem ipsum',
-        'date': 'Jan 1 3033',
+        'content': 'Second post content',
+        'date_posted': 'April 21, 2018'
     }
 ]
 
-app = Flask(__name__)
 
-@app.route('/')
-@app.route('/home')
-def index():
-    return render_template('index.html', posts=posts)
+@app.route("/")
+@app.route("/home")
+def home():
+    return render_template('home.html', posts=posts)
 
-@app.route('/about')
+
+@app.route("/about")
 def about():
     return render_template('about.html', title='About')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
