@@ -2,20 +2,20 @@ from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
+app.config['SECRET_KEY'] = '123456789'
 
 posts = [
     {
-        'author': 'Corey Schafer',
+        'author': 'John Doe',
         'title': 'Blog Post 1',
         'content': 'First post content',
-        'date_posted': 'April 20, 2018'
+        'date_posted': '3 May 1999'
     },
     {
         'author': 'Jane Doe',
         'title': 'Blog Post 2',
         'content': 'Second post content',
-        'date_posted': 'April 21, 2018'
+        'date_posted': '3 May 1999'
     }
 ]
 
